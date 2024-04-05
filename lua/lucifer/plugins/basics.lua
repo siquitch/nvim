@@ -20,5 +20,6 @@ return {
     {
         'stevearc/dressing.nvim',
         opts = {},
-    }
+    },
+    'tpope/vim-fugitive',
 }

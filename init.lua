@@ -1,4 +1,4 @@
 require('lucifer.set')
-require('lucifer.remap')
+require('lucifer.keymap')
 require('lucifer.lazy')
 
