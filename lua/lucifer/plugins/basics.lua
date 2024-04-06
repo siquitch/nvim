@@ -22,10 +22,6 @@ return {
         name = 'icons',
     },
     {
-        'folke/trouble.nvim',
-        dependencies = { 'icons' },
-    },
-    {
         'stevearc/dressing.nvim',
         name = 'dressing',
         opts = {},

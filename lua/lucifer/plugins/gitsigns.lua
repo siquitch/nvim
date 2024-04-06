@@ -11,12 +11,12 @@ return {
         {
             '<leader>gh',
             '<cmd>Gitsigns preview_hunk<cr>',
-            desc = { 'Preview hunk' },
+            desc = 'Preview hunk',
         },
         {
             '<leader>gb',
             '<cmd>Gitsigns toggle_current_line_blame<cr>',
-            desc = { 'Toggle line blame', },
+            desc = 'Toggle line blame',
         },
     }
 }

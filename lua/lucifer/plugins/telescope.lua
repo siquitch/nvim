@@ -6,9 +6,13 @@ return {
         config = function()
             local builtin = require('telescope.builtin')
             vim.keymap.set('n', '<leader>ff', builtin.find_files,
-                { desc = 'find files' })
+                { desc = 'Find files' })
             vim.keymap.set('n', '<leader>fc', builtin.git_files,
-                { desc = 'git files' })
+                { desc = 'Git files' })
+            vim.keymap.set('n', '<leader>fh', builtin.search_history,
+                { desc = 'Find history' })
+            vim.keymap.set('n', '<leader>fd', builtin.diagnostics,
+                { desc = 'Search diagnostics' })
         end,
     },
 }
