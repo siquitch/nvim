@@ -5,7 +5,7 @@ return {
         {
             '<leader>z',
             vim.cmd.UndotreeToggle,
-            desc = 'undo tree toggle',
+            desc = 'Toggle undo tree',
         },
     },
 }

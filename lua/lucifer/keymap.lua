@@ -52,6 +52,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map.set('n', 'gr', vim.lsp.buf.references, opts)
         map.set('n', '<space>fm', function()
             vim.lsp.buf.format { async = true }
-        end, opts)
+        end, opts )
     end,
 })

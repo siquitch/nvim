@@ -8,7 +8,11 @@ return {
     keys = function()
         local harpoon = require('harpoon')
         return {
-            { '<leader>a', function() harpoon:list():add() end,  desc = 'harpoon file', },
+            {
+                '<leader>a',
+                function() harpoon:list():add() end,
+                desc = 'harpoon add',
+            },
             {
                 '<C-e>',
                 function()
