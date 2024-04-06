@@ -19,9 +19,13 @@ map.set('n', '<leader>y', "\"+y")
 map.set('v', '<leader>y', "\"+y")
 map.set('n', '<leader>Y', "\"+Y")
 
--- lsp stuff
-map.set('n', '<space>e', vim.diagnostic.open_float)
-map.set('n', '<space>q', vim.diagnostic.setloclist)
+-- Window nav
+map.set('n', '<leader>wh', '<cmd>wincmd h<cr>', { desc = 'Move to left window' })
+map.set('n', '<leader>wj', '<cmd>wincmd j<cr>', { desc = 'Move down window' })
+map.set('n', '<leader>wk', '<cmd>wincmd k<cr>', { desc = 'Move up window' })
+map.set('n', '<leader>wl', '<cmd>wincmd l<cr>', { desc = 'Move to right window' })
+map.set('n', '<leader>wv', '<cmd>wincmd v<cr>', { desc = 'Split window vertically' })
+map.set('n', '<leader>wo', '<cmd>wincmd o<cr>', { desc = 'Close other windows' })
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
@@ -39,17 +43,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map.set('n', 'K', vim.lsp.buf.hover, opts)
         map.set('n', 'gi', vim.lsp.buf.implementation, opts)
         map.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-        map.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-        map.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-        map.set('n', '<space>wl', function()
-            print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-        end, opts)
         map.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
         map.set('n', '<space>rn', vim.lsp.buf.rename, opts)
         map.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
         map.set('n', 'gr', vim.lsp.buf.references, opts)
         map.set('n', '<space>fm', function()
             vim.lsp.buf.format { async = true }
-        end, opts )
+        end, opts)
     end,
 })
