@@ -6,7 +6,13 @@ return {
         'dressing',
     },
     config = function()
-        require('flutter-tools').setup()
+        require('flutter-tools').setup{
+            lsp = {
+                color = {
+                    enabled = true
+                }
+            }
+        }
     end,
     keys = {
         {
@@ -33,6 +39,11 @@ return {
             '<leader>rl',
             '<cmd>FlutterReanalyze<cr>',
             desc = 'Flutter reload lsp'
+        },
+        {
+            '<leader>rq',
+            '<cmd>FlutterQuit<cr>',
+            desc = 'Flutter quit'
         },
     }
 }
