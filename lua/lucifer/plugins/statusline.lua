@@ -7,7 +7,7 @@ return {
     config = function()
         require('lualine').setup {
             sections = {
-                lualine_x = { 'flutter_tools_decorations.device', 'filetype' },
+                lualine_x = { 'filetype' },
                 lualine_y = { 'searchcount' },
             }
         }
