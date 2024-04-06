@@ -22,19 +22,5 @@ return {
             '<cmd>TroubleRefresh<cr>',
             desc = 'Trouble refresh'
         },
-        {
-            '<leader>tn',
-            function ()
-                require('trouble').next({skip_groups = true, jump = true})
-            end,
-            desc = 'Trouble next'
-        },
-        {
-            '<leader>tp',
-            function ()
-                require('trouble').previous({skip_groups = true, jump = true})
-            end,
-            desc = 'Trouble previous'
-        },
     }
 }
