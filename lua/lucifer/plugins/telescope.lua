@@ -15,6 +15,8 @@ return {
                 { desc = 'Find history' })
             vim.keymap.set('n', '<leader>fd', builtin.diagnostics,
                 { desc = 'Search diagnostics' })
+            vim.keymap.set('n', '<leader>f/', builtin.current_buffer_fuzzy_find,
+                { desc = 'Search current file' })
         end,
     },
 }

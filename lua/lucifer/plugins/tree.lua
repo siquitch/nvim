@@ -1,7 +1,11 @@
 return {
     'nvim-tree/nvim-tree.lua',
     config = function()
-        require('nvim-tree').setup()
+        require('nvim-tree').setup{
+            filters = {
+                enable = false,
+            }
+        }
     end,
     keys = {
         {
