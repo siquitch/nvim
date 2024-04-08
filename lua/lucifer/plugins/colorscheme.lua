@@ -1,7 +1,6 @@
 return {
     {
         'catppuccin/nvim',
-        dependencies = { 'harpoon', 'dashboard' },
         name = 'cat',
         priority = 1000,
         config = function()
