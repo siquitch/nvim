@@ -8,6 +8,7 @@ return {
                 week_header = {
                     enable = true,
                 },
+                project = { enable = false },
                 shortcut = {
                     {
                         desc = '󰊳 Update',
