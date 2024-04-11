@@ -2,9 +2,13 @@ return {
     {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
-        dependencies = { 'plenary' },
+        dependencies = {
+            { 'plenary' },
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+        },
         config = function()
             require('telescope').setup()
+            require('telescope').load_extension('fzf')
             local builtin = require('telescope.builtin')
             vim.keymap.set('n', '<leader>ff', builtin.find_files,
                 { desc = 'Find files' })
@@ -18,6 +22,12 @@ return {
                 { desc = 'Search diagnostics' })
             vim.keymap.set('n', '<leader>f/', builtin.current_buffer_fuzzy_find,
                 { desc = 'Search current file' })
+            vim.keymap.set('n', '<leader>fq', builtin.quickfix,
+                { desc = 'List quickfix' })
+            vim.keymap.set('n', '<leader>fr', builtin.lsp_references,
+                { desc = 'Find references' })
+            vim.keymap.set('n', '<leader>fb', builtin.git_branches,
+                { desc = 'Git branches' })
         end,
     },
 }

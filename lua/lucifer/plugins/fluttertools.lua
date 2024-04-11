@@ -6,7 +6,7 @@ return {
         'dressing',
     },
     config = function()
-        require('flutter-tools').setup{
+        require('flutter-tools').setup {
             decorations = {
                 statusline = {
                     app_version = true,
@@ -17,7 +17,10 @@ return {
             lsp = {
                 color = {
                     enabled = true
-                }
+                },
+                settings = {
+                    renameFilesWithClasses = 'always',
+                },
             }
         }
     end,
