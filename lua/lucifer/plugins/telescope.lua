@@ -14,18 +14,16 @@ return {
             }
             require('telescope').load_extension('fzf')
             local builtin = require('telescope.builtin')
-            vim.keymap.set('n', '<leader>ff', builtin.find_files,
+            vim.keymap.set('n', '<leader>ff', builtin.fd,
                 { desc = 'Find files' })
             vim.keymap.set('n', '<leader>f.',
                 function()
-                    builtin.find_files({ hidden = true })
+                    builtin.fd({ hidden = true })
                 end,
                 { desc = 'Find files hidden included' })
             vim.keymap.set('n', '<leader>fg', builtin.live_grep,
                 { desc = 'Live grep' })
-            vim.keymap.set('n', '<leader>fc', builtin.git_files,
-                { desc = 'Git files' })
-            vim.keymap.set('n', '<leader>fh', builtin.search_history,
+            vim.keymap.set('n', '<leader>gf', builtin.search_history,
                 { desc = 'Find history' })
             vim.keymap.set('n', '<leader>fd', builtin.diagnostics,
                 { desc = 'Search diagnostics' })
@@ -35,8 +33,16 @@ return {
                 { desc = 'List quickfix' })
             vim.keymap.set('n', '<leader>fr', builtin.lsp_references,
                 { desc = 'Find references' })
-            vim.keymap.set('n', '<leader>fb', builtin.git_branches,
+
+            -- Git stuff
+            vim.keymap.set('n', '<leader>gf', builtin.git_files,
+                { desc = 'Git files' })
+            vim.keymap.set('n', '<leader>gc', builtin.git_commits,
+                { desc = 'Git commits' })
+            vim.keymap.set('n', '<leader>gg', builtin.git_branches,
                 { desc = 'Git branches' })
+            vim.keymap.set('n', '<leader>gs', builtin.git_status,
+                { desc = 'Git status' })
         end,
     },
 }

@@ -11,6 +11,15 @@ return {
         'plenary'
     },
     keys = {
-        {'<leader>lg', vim.cmd.LazyGit, desc = 'Open LazyGit'},
+        {
+            '<leader>lg',
+            vim.cmd.LazyGit,
+            desc = 'Open LazyGit'
+        },
+        {
+            '<leader>lc',
+            vim.cmd.LazyGitConfig,
+            desc = 'Open LazyGit config'
+        },
     }
 }
