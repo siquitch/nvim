@@ -13,6 +13,7 @@ return {
                 },
             }
             require('telescope').load_extension('fzf')
+            require('telescope').load_extension('flutter')
             local builtin = require('telescope.builtin')
             vim.keymap.set('n', '<leader>ff', builtin.fd,
                 { desc = 'Find files' })
@@ -33,6 +34,11 @@ return {
                 { desc = 'List quickfix' })
             vim.keymap.set('n', '<leader>fr', builtin.lsp_references,
                 { desc = 'Find references' })
+
+            -- Flutter
+            vim.keymap.set('n', '<leader>rc',
+                require('telescope').extensions.flutter.commands,
+                { desc = 'Flutter commands' })
 
             -- Git stuff
             vim.keymap.set('n', '<leader>gf', builtin.git_files,

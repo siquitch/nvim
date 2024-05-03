@@ -41,6 +41,21 @@ return {
             desc = 'Flutter emulators'
         },
         {
+            '<leader>rs',
+            '<cmd>FlutterRestart<cr>',
+            desc = 'Flutter restart'
+        },
+        {
+            '<leader>rw',
+            '<cmd>FlutterLogClear<cr>',
+            desc = 'Flutter restart'
+        },
+        {
+            '<leader>rg',
+            '<cmd>FlutterPubGet<cr>',
+            desc = 'Flutter pub get'
+        },
+        {
             '<leader>ro',
             '<cmd>FlutterOutlineToggle<cr>',
             desc = 'Flutter toggle outline'
