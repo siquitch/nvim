@@ -9,7 +9,12 @@ return {
         config = function()
             require('telescope').setup {
                 defaults = {
-                    layout_strategy = 'vertical',
+                    layout_strategy = 'center',
+                    layout_config = {
+                        center = {
+                            prompt_position = 'bottom'
+                        }
+                    }
                 },
             }
             require('telescope').load_extension('fzf')
