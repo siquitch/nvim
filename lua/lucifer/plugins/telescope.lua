@@ -5,6 +5,7 @@ return {
         dependencies = {
             { 'plenary' },
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+            { 'debugloop/telescope-undo.nvim' },
         },
         config = function()
             require('telescope').setup {
@@ -12,13 +13,15 @@ return {
                     layout_strategy = 'center',
                     layout_config = {
                         center = {
-                            prompt_position = 'bottom'
+                            prompt_position = 'bottom',
+                            preview_cutoff = 20,
                         }
                     }
                 },
             }
             require('telescope').load_extension('fzf')
             require('telescope').load_extension('flutter')
+            require('telescope').load_extension('undo')
             local builtin = require('telescope.builtin')
             vim.keymap.set('n', '<leader>ff', builtin.fd,
                 { desc = 'Find files' })
@@ -39,6 +42,10 @@ return {
                 { desc = 'List quickfix' })
             vim.keymap.set('n', '<leader>fr', builtin.lsp_references,
                 { desc = 'Find references' })
+
+            -- Undo
+            vim.keymap.set('n', '<leader>fu', '<cmd>Telescope undo<cr>',
+                { desc = 'Flutter commands' })
 
             -- Flutter
             vim.keymap.set('n', '<leader>rc',
