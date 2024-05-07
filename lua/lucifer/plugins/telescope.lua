@@ -42,7 +42,7 @@ return {
                 { desc = 'List quickfix' })
             vim.keymap.set('n', '<leader>fr', builtin.lsp_references,
                 { desc = 'Find references' })
-            vim.keymap.set('n', '<leader>fr', builtin.help_tags,
+            vim.keymap.set('n', '<leader>fh', builtin.help_tags,
                 { desc = 'Help' })
 
             -- Undo
