@@ -42,10 +42,12 @@ return {
                 { desc = 'List quickfix' })
             vim.keymap.set('n', '<leader>fr', builtin.lsp_references,
                 { desc = 'Find references' })
+            vim.keymap.set('n', '<leader>fr', builtin.help_tags,
+                { desc = 'Help' })
 
             -- Undo
             vim.keymap.set('n', '<leader>fu', '<cmd>Telescope undo<cr>',
-                { desc = 'Flutter commands' })
+                { desc = 'Undo history' })
 
             -- Flutter
             vim.keymap.set('n', '<leader>rc',

@@ -1,4 +1,5 @@
 return {
+    -- dir = 'C:\\Users\\Eli\\coding_projects\\flutter-tools.nvim',
     'akinsho/flutter-tools.nvim',
     lazy = false,
     dependencies = {
@@ -48,7 +49,7 @@ return {
         {
             '<leader>rw',
             '<cmd>FlutterLogClear<cr>',
-            desc = 'Flutter restart'
+            desc = 'Clear logs'
         },
         {
             '<leader>rg',
