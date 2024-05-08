@@ -2,6 +2,8 @@ vim.g.mapleader = ' '
 
 local map = vim.keymap
 
+map.set('n', 'G', 'Gzz')
+
 -- Move things while highlighted
 map.set('v', 'J', ":m '>+1<CR>gv=gv")
 map.set('v', 'K', ":m '>-2<CR>gv=gv")
