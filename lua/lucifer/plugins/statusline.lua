@@ -14,5 +14,6 @@ return {
                 lualine_y = { 'searchcount' },
             },
         }
-    end
+    end,
+
 }

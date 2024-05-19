@@ -20,11 +20,5 @@ return {
     {
         'nvim-tree/nvim-web-devicons',
         name = 'icons',
-    },
-    {
-        'stevearc/dressing.nvim',
-        name = 'dressing',
-        opts = {},
-    },
-    'tpope/vim-fugitive',
+    }
 }

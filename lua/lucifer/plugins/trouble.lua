@@ -1,26 +1,24 @@
 return {
     'folke/trouble.nvim',
     dependencies = { 'icons' },
+    branch = 'dev',
+    name = 'trouble',
     keys = {
         {
-            '<leader>tw',
-            '<cmd>TroubleToggle workspace_diagnostics<cr>',
-            desc = 'Trouble workspace'
-        },
-        {
             '<leader>td',
-            '<cmd>TroubleToggle document_diagnostics<cr>',
-            desc = 'Trouble document'
+            '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
+            desc = 'Trouble toggle'
         },
         {
-            '<leader>tq',
-            '<cmd>TroubleToggle quickfix<cr>',
-            desc = 'Trouble quickfix'
+            '<leader>tw',
+            '<cmd>Trouble diagnostics toggle<cr>',
+            desc = 'Trouble toggle workspace'
         },
         {
             '<leader>tr',
             '<cmd>TroubleRefresh<cr>',
             desc = 'Trouble refresh'
         },
-    }
+    },
+    opts = {},
 }
