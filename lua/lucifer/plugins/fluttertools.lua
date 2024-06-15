@@ -1,5 +1,4 @@
 return {
-	-- dir = "C:\\Users\\Eli\\coding_projects\\flutter-tools.nvim",
 	'akinsho/flutter-tools.nvim',
 	lazy = false,
 	dependencies = {
@@ -15,6 +14,7 @@ return {
 					project_config = true,
 				},
 			},
+            fvm = true,
 			lsp = {
 				settings = {
 					renameFilesWithClasses = "always",

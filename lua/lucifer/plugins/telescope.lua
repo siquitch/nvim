@@ -45,6 +45,12 @@ return {
                 require("telescope").extensions.flutter.commands,
                 { desc = "Flutter commands" }
             )
+            vim.keymap.set(
+                "n",
+                "<leader>rv",
+                require("telescope").extensions.flutter.fvm,
+                { desc = "Flutter commands" }
+            )
 
             -- Git stuff
             vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Git files" })
