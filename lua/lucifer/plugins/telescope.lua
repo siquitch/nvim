@@ -28,12 +28,12 @@ return {
                 builtin.fd({ hidden = true })
             end, { desc = "Find files hidden included" })
             vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
-            vim.keymap.set("n", "<leader>gf", builtin.search_history, { desc = "Find history" })
             vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Search diagnostics" })
             vim.keymap.set("n", "<leader>f/", builtin.current_buffer_fuzzy_find, { desc = "Search current file" })
-            vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "List quickfix" })
             vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find references" })
             vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
+            vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Document symbols" })
+            vim.keymap.set("n", "<leader>fa", builtin.lsp_workspace_symbols, { desc = "Workspace symbols" })
 
             -- Undo
             vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { desc = "Undo history" })

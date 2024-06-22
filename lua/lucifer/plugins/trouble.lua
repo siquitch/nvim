@@ -1,7 +1,6 @@
 return {
     'folke/trouble.nvim',
     dependencies = { 'icons' },
-    branch = 'dev',
     name = 'trouble',
     keys = {
         {
