@@ -18,6 +18,13 @@ return {
             '<cmd>TroubleRefresh<cr>',
             desc = 'Trouble refresh'
         },
+        {
+            '<leader>tn',
+            function()
+                require('trouble').next({})
+            end,
+            desc = 'Trouble next'
+        },
     },
     opts = {},
 }

@@ -17,6 +17,7 @@ return {
                             preview_cutoff = 20,
                         },
                     },
+                    path_display = { truncate = 3 },
                 },
             })
             require("telescope").load_extension("fzf")
@@ -34,6 +35,7 @@ return {
             vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
             vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Document symbols" })
             vim.keymap.set("n", "<leader>fa", builtin.lsp_workspace_symbols, { desc = "Workspace symbols" })
+            vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix" })
 
             -- Undo
             vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { desc = "Undo history" })
