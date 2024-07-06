@@ -1,3 +1,5 @@
+-- Paste below line into .nvim.lua
+-- dofile('C:\\Users\\Eli\\AppData\\Local\\nvim\\custom_configs\\flutter_config.lua')
 -- For flutter status line
 local function getVersion()
     local version = vim.g.flutter_tools_decorations or {}

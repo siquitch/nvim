@@ -14,7 +14,6 @@ return {
 					project_config = true,
 				},
 			},
-            fvm = true,
 			lsp = {
 				settings = {
 					renameFilesWithClasses = "always",
