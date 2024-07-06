@@ -1,7 +1,6 @@
 return {
     'folke/trouble.nvim',
     dependencies = { 'icons' },
-    branch = 'dev',
     name = 'trouble',
     keys = {
         {
@@ -18,6 +17,13 @@ return {
             '<leader>tr',
             '<cmd>TroubleRefresh<cr>',
             desc = 'Trouble refresh'
+        },
+        {
+            '<leader>tn',
+            function()
+                require('trouble').next({})
+            end,
+            desc = 'Trouble next'
         },
     },
     opts = {},
