@@ -1,26 +1,25 @@
 return {
-	'akinsho/flutter-tools.nvim',
+	"akinsho/flutter-tools.nvim",
 	lazy = false,
 	dependencies = {
 		"plenary",
 		"dressing",
 	},
-	config = function()
-		require("flutter-tools").setup({
-			decorations = {
-				statusline = {
-					app_version = true,
-					device = true,
-					project_config = true,
-				},
+	opts = {
+		decorations = {
+			statusline = {
+				app_version = true,
+				device = true,
+				project_config = true,
 			},
-			lsp = {
-				settings = {
-					renameFilesWithClasses = "always",
-				},
+		},
+		lsp = {
+			color = { enabled = true },
+			settings = {
+				renameFilesWithClasses = "always",
 			},
-		})
-	end,
+		},
+	},
 	keys = {
 		{
 			"<leader>rr",

@@ -2,6 +2,7 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- To execute project .nvim files
 vim.o.exrc = true
 
 vim.wo.rnu = true
@@ -22,6 +23,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+vim.opt.guicursor = "n-v-i-c:block-Cursor"
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"

@@ -21,14 +21,6 @@ map.set('n', '<leader>y', "\"+y")
 map.set('v', '<leader>y', "\"+y")
 map.set('n', '<leader>Y', "\"+Y")
 
--- Window nav
-map.set('n', '<leader>wh', '<cmd>wincmd h<cr>', { desc = 'Move to left window' })
-map.set('n', '<leader>wj', '<cmd>wincmd j<cr>', { desc = 'Move down window' })
-map.set('n', '<leader>wk', '<cmd>wincmd k<cr>', { desc = 'Move up window' })
-map.set('n', '<leader>wl', '<cmd>wincmd l<cr>', { desc = 'Move to right window' })
-map.set('n', '<leader>wv', '<cmd>wincmd v<cr>', { desc = 'Split window vertically' })
-map.set('n', '<leader>wo', '<cmd>wincmd o<cr>', { desc = 'Close other windows' })
-
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {

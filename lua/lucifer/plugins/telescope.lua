@@ -1,58 +1,109 @@
 return {
-    {
-        "nvim-telescope/telescope.nvim",
-        branch = "0.1.x",
-        dependencies = {
-            { "plenary" },
-            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-            { "debugloop/telescope-undo.nvim" },
-        },
-        config = function()
-            require("telescope").setup({
-                defaults = {
-                    layout_strategy = "center",
-                    layout_config = {
-                        center = {
-                            prompt_position = "bottom",
-                            preview_cutoff = 20,
-                        },
-                    },
-                    path_display = { truncate = 3 },
-                },
-            })
-            require("telescope").load_extension("fzf")
-            require("telescope").load_extension("flutter")
-            require("telescope").load_extension("undo")
-            local builtin = require("telescope.builtin")
-            vim.keymap.set("n", "<leader>ff", builtin.fd, { desc = "Find files" })
-            vim.keymap.set("n", "<leader>f.", function()
-                builtin.fd({ hidden = true })
-            end, { desc = "Find files hidden included" })
-            vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live grep" })
-            vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Search diagnostics" })
-            vim.keymap.set("n", "<leader>f/", builtin.current_buffer_fuzzy_find, { desc = "Search current file" })
-            vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find references" })
-            vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help" })
-            vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Document symbols" })
-            vim.keymap.set("n", "<leader>fa", builtin.lsp_workspace_symbols, { desc = "Workspace symbols" })
-            vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "Quickfix" })
-
-            -- Undo
-            vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { desc = "Undo history" })
-
-            -- Flutter
-            vim.keymap.set(
-                "n",
-                "<leader>rc",
-                require("telescope").extensions.flutter.commands,
-                { desc = "Flutter commands" }
-            )
-
-            -- Git stuff
-            vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Git files" })
-            vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "Git commits" })
-            vim.keymap.set("n", "<leader>gg", builtin.git_branches, { desc = "Git branches" })
-            vim.keymap.set("n", "<leader>gs", builtin.git_status, { desc = "Git status" })
-        end,
-    },
+	{
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		dependencies = {
+			{ "plenary" },
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+			{ "debugloop/telescope-undo.nvim" },
+		},
+		opts = {
+			defaults = {
+				layout_strategy = "center",
+				layout_config = {
+					center = {
+						preview_cutoff = 20,
+					},
+				},
+				path_display = { truncate = 3 },
+			},
+		},
+		init = function()
+			require("telescope").load_extension("fzf")
+			require("telescope").load_extension("flutter")
+			require("telescope").load_extension("undo")
+		end,
+		keys = function()
+			local builtin = require("telescope.builtin")
+			return {
+				{
+					"<leader>ff",
+					builtin.fd,
+					desc = "Find files",
+				},
+				{
+					"<leader>f.",
+					function()
+						builtin.fd({ hidden = true })
+					end,
+					desc = "Find files hidden included",
+				},
+				{
+					"<leader>fg",
+					builtin.live_grep,
+					desc = "Global search",
+				},
+				{
+					"<leader>fd",
+					builtin.diagnostics,
+					desc = "Diagnostics",
+				},
+				{
+					"<leader>f/",
+					builtin.current_buffer_fuzzy_find,
+					desc = "Search buffer",
+				},
+				{
+					"<leader>fr",
+					builtin.lsp_references,
+					desc = "Find references",
+				},
+				{
+					"<leader>fh",
+					builtin.help_tags,
+					desc = "Help",
+				},
+				{
+					"<leader>fs",
+					builtin.lsp_document_symbols,
+					desc = "Document symbols",
+				},
+				{
+					"<leader>fa",
+					builtin.lsp_workspace_symbols,
+					desc = "Workspace symbols",
+				},
+				{
+					"<leader>fu",
+					"<cmd>Telescope undo<cr>",
+					desc = "Undo history",
+				},
+				{
+					"<leader>rc",
+					require("telescope").extensions.flutter.commands,
+					desc = "Flutter commands",
+				},
+				{
+					"<leader>gf",
+					builtin.git_files,
+					desc = "Git files",
+				},
+				{
+					"<leader>gc",
+					builtin.git_commits,
+					desc = "Git commits",
+				},
+				{
+					"<leader>gg",
+					builtin.git_branches,
+					desc = "Git branches",
+				},
+				{
+					"<leader>gs",
+					builtin.git_status,
+					desc = "Git status",
+				},
+			}
+		end,
+	},
 }
