@@ -37,11 +37,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map.set('n', 'K', vim.lsp.buf.hover, opts)
         map.set('n', 'gi', vim.lsp.buf.implementation, opts)
         map.set('n', '<C-g>', vim.lsp.buf.signature_help, opts)
-        map.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+        map.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
         map.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-        map.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+        map.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
         map.set('n', 'gr', vim.lsp.buf.references, opts)
-        map.set('n', '<space>fm', function()
+        map.set('n', '<leader>fm', function()
             vim.lsp.buf.format { async = true }
         end, opts)
     end,
