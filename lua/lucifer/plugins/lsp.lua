@@ -16,7 +16,7 @@ return {
 		local lsp = require("lspconfig")
 		require("mason").setup()
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "clangd", "marksman" },
+			ensure_installed = { "lua_ls", "clangd", "marksman", "gopls" },
 			handlers = {
 				["lua_ls"] = function()
 					lsp.lua_ls.setup({
@@ -35,6 +35,9 @@ return {
 				end,
 				["marksman"] = function()
 					lsp.marksman.setup({})
+				end,
+				["gopls"] = function()
+					lsp.gopls.setup({})
 				end,
 			},
 		})
