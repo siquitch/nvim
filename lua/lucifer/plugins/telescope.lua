@@ -13,6 +13,7 @@ return {
 				layout_config = {
 					center = {
 						preview_cutoff = 20,
+                        width = 0.8,
 					},
 				},
 				path_display = { truncate = 3 },
