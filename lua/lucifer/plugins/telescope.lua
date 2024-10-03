@@ -20,7 +20,7 @@ return {
 		},
 		init = function()
 			require("telescope").load_extension("fzf")
-			require("telescope").load_extension("flutter")
+			-- require("telescope").load_extension("flutter")
 			require("telescope").load_extension("undo")
 		end,
 		keys = function()
@@ -78,11 +78,11 @@ return {
 					"<cmd>Telescope undo<cr>",
 					desc = "Undo history",
 				},
-				{
-					"<leader>rc",
-					require("telescope").extensions.flutter.commands,
-					desc = "Flutter commands",
-				},
+				-- {
+				-- 	"<leader>rc",
+				-- 	require("telescope").extensions.flutter.commands,
+				-- 	desc = "Flutter commands",
+				-- },
 				{
 					"<leader>gf",
 					builtin.git_files,
