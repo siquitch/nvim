@@ -21,7 +21,7 @@ return {
 				["lua_ls"] = function()
 					lsp.lua_ls.setup({
 						settings = {
-							complettion = {
+							completion = {
 								callSnippet = "Replace",
 							},
 							diagnostics = {
@@ -39,6 +39,26 @@ return {
 				["gopls"] = function()
 					lsp.gopls.setup({})
 				end,
+			},
+		})
+		lsp.dartls.setup({
+			default_config = {
+				init_options = {
+					onlyAnalyzeProjectsWithOpenFiles = true,
+					suggestFromUnimportedLibraries = true,
+					closingLabels = false,
+					outline = false,
+					flutterOutline = true,
+				},
+				settings = {
+					dart = {
+						completeFunctionCalls = true,
+						showTodos = true,
+						renameFilesWithClasses = "always",
+						enableSnippets = true,
+						updateImportsOnRename = true,
+					},
+				},
 			},
 		})
 	end,
