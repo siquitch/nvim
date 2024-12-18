@@ -42,22 +42,21 @@ return {
 			},
 		})
 		lsp.dartls.setup({
-			default_config = {
-				init_options = {
-					onlyAnalyzeProjectsWithOpenFiles = true,
-					suggestFromUnimportedLibraries = true,
-					closingLabels = false,
-					outline = false,
-					flutterOutline = true,
-				},
-				settings = {
-					dart = {
-						completeFunctionCalls = true,
-						showTodos = true,
-						renameFilesWithClasses = "always",
-						enableSnippets = true,
-						updateImportsOnRename = true,
-					},
+			root_dir = lsp.util.root_pattern("pubspec.yaml", "*.dart"),
+			init_options = {
+				onlyAnalyzeProjectsWithOpenFiles = true,
+				suggestFromUnimportedLibraries = true,
+				closingLabels = false,
+				outline = false,
+				flutterOutline = false,
+			},
+			settings = {
+				dart = {
+					completeFunctionCalls = true,
+					showTodos = true,
+					renameFilesWithClasses = "always",
+					enableSnippets = true,
+					updateImportsOnRename = true,
 				},
 			},
 		})
