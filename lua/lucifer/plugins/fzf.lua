@@ -8,6 +8,12 @@ return {
 				["<c-u>"] = "preview-page-up",
 			},
 		},
+		files = {
+            prompt = "Files> ",
+			previewer = false,
+			formatter = "path.filename_first",
+            cwd_prompt = false,
+		},
 	},
 	keys = function()
 		local fzf = require("fzf-lua")
