@@ -10,6 +10,7 @@ return {
 				no_italic = false,
 				integrations = {
 					harpoon = true,
+					blink_cmp = true,
 				},
 			})
 			vim.cmd([[colorscheme catppuccin]])

@@ -4,15 +4,15 @@ return {
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path",
-		"hrsh7th/cmp-cmdline",
-		"L3MON4D3/LuaSnip",
-		"saadparwaiz1/cmp_luasnip",
+		"saghen/blink.cmp",
+	},
+	opts = {
+		servers = {
+			lua_ls = {},
+		},
 	},
 
-	config = function()
+	config = function(_, opts)
 		local lsp = require("lspconfig")
 		require("mason").setup()
 		require("mason-lspconfig").setup({
@@ -60,5 +60,11 @@ return {
 				},
 			},
 		})
+
+		for server, config in pairs(opts.servers) do
+			local capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+			config.capabilities = capabilities
+			lsp[server].setup(config)
+		end
 	end,
 }
