@@ -1,21 +1,31 @@
 -- Paste below line into .nvim.lua
 -- dofile('C:\\Users\\Eli\\AppData\\Local\\nvim\\custom_configs\\flutter_config.lua')
 -- For flutter status line
-local function getVersion()
-    local version = vim.g.flutter_tools_decorations or {}
-    if version['app_version'] == nil then return '' end
-    return version['app_version']
+
+local function get_pubspec_version(file_path)
+	local file = io.open(file_path, "r")
+	if not file then
+		return nil, "Could not open file: " .. file_path
+	end
+
+	local content = file:read("*all")
+	file:close()
+
+	-- Match the version field in the pubspec.yaml file
+	local version = content:match("version:%s*([%d%.%+%-]+)")
+	if version then
+		return version
+	else
+		return nil, "Version not found in pubspec.yaml"
+	end
 end
 
-local function getConfig()
-    local config = vim.g.flutter_tools_decorations or {}
-    if config['project_config']['name'] == nil then return '' end
-    return config['project_config']['name']
+local function get_version()
+	return get_pubspec_version("pubspec.yaml")
 end
 
-require('lualine').setup {
-    sections = {
-        lualine_c = { 'filename', getConfig },
-        lualine_x = { getVersion, 'filetype' }
-    }
-}
+require("lualine").setup({
+	sections = {
+		lualine_x = { get_version, "filetype" },
+	},
+})
