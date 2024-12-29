@@ -9,6 +9,10 @@ return {
 	opts = {
 		servers = {
 			lua_ls = {},
+			clangd = {},
+			marksman = {},
+			gopls = {},
+			dartls = {},
 		},
 	},
 
