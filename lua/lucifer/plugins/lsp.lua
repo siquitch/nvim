@@ -18,6 +18,7 @@ return {
 
 	config = function(_, opts)
 		local lsp = require("lspconfig")
+		local util = lsp.util
 		require("mason").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = { "lua_ls", "clangd", "marksman", "gopls" },
@@ -46,7 +47,6 @@ return {
 			},
 		})
 		lsp.dartls.setup({
-			root_dir = lsp.util.root_pattern("pubspec.yaml", "*.dart"),
 			init_options = {
 				onlyAnalyzeProjectsWithOpenFiles = true,
 				suggestFromUnimportedLibraries = true,

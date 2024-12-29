@@ -6,7 +6,7 @@ return {
 	{
 		"folke/which-key.nvim",
 		dependencies = {
-            "icons",
+			"icons",
 		},
 		event = "VeryLazy",
 		init = function()
@@ -29,6 +29,6 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		name = "icons",
 	},
-	{ "numToStr/Comment.nvim" },
+	{ "numToStr/Comment.nvim", opts = {} },
 	{ "j-hui/fidget.nvim", opts = {} },
 }
