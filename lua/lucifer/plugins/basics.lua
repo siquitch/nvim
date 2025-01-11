@@ -20,6 +20,7 @@ return {
 			notify = false,
 		},
 	},
+	{ "echasnovski/mini.icons", name = "icons", opts = {} },
 	{ "numToStr/Comment.nvim", opts = {} },
 	{ "j-hui/fidget.nvim", opts = {} },
 }

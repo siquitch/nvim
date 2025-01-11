@@ -20,7 +20,6 @@
   "nvim-lspconfig": { "branch": "master", "commit": "8121483b8132b7053120fafd83728178fb3febf6" },
   "nvim-surround": { "branch": "main", "commit": "9f0cb495f25bff32c936062d85046fbda0c43517" },
   "nvim-treesitter": { "branch": "master", "commit": "622a4a6ba76d1de52b72a965159213ae655b4ac7" },
-  "nvim-web-devicons": { "branch": "master", "commit": "5740b7382429d20b6ed0bbdb0694185af9507d44" },
   "oil.nvim": { "branch": "master", "commit": "a6a4f48b14b4a51fded531c86f6c04b4503a2ef8" },
   "pasted.nvim": { "branch": "master", "commit": "b9370713325f6af9ebc2095ad71022d8ce91678a" },
   "plenary": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },

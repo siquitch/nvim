@@ -1,6 +1,6 @@
 return {
 	"stevearc/oil.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = { "icons" },
 	config = function()
 		require("oil").setup({
 			prompt_save_on_select_new_entry = false,
