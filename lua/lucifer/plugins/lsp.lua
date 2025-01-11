@@ -18,10 +18,9 @@ return {
 
 	config = function(_, opts)
 		local lsp = require("lspconfig")
-		local util = lsp.util
 		require("mason").setup()
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "clangd", "marksman", "gopls" },
+			ensure_installed = { "lua_ls", "clangd", "marksman", "gopls", "arduino_language_server" },
 			handlers = {
 				["lua_ls"] = function()
 					lsp.lua_ls.setup({
@@ -43,6 +42,17 @@ return {
 				end,
 				["gopls"] = function()
 					lsp.gopls.setup({})
+				end,
+				["arduino_language_server"] = function()
+					lsp.arduino_language_server.setup({
+						cmd = {
+							"arduino-language-server",
+							"-cli-config",
+							"C:\\Users\\Eli\\AppData\\Local\\Arduino15\\arduino-cli.yaml",
+							"-fqbn",
+							"arduino:avr:uno",
+						},
+					})
 				end,
 			},
 		})

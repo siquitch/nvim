@@ -1,7 +1,7 @@
 return {
 	"saghen/blink.cmp",
 	dependencies = "rafamadriz/friendly-snippets",
-	version = "*",
+	version = "v0.10.0",
 	opts = {
 		keymap = {
 			["<Down>"] = { "select_next", "fallback" },
