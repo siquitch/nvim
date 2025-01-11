@@ -20,15 +20,6 @@ return {
 			notify = false,
 		},
 	},
-	{
-		"folke/neoconf.nvim",
-		cmd = "Neoconf",
-	},
-	"folke/neodev.nvim",
-	{
-		"nvim-tree/nvim-web-devicons",
-		name = "icons",
-	},
 	{ "numToStr/Comment.nvim", opts = {} },
 	{ "j-hui/fidget.nvim", opts = {} },
 }
