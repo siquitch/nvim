@@ -10,7 +10,7 @@ return {
 			{
 				"<leader>tl",
 				line.toggle,
-				"Toggle line diagnostics",
+				desc = "Toggle line diagnostics",
 			},
 		}
 	end,

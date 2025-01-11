@@ -1,6 +1,7 @@
 return {
 	"stevearc/oil.nvim",
 	dependencies = { "icons" },
+    priority = 1000000,
 	config = function()
 		require("oil").setup({
 			prompt_save_on_select_new_entry = false,

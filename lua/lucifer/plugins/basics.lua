@@ -5,9 +5,7 @@ return {
 	},
 	{
 		"folke/which-key.nvim",
-		dependencies = {
-			"icons",
-		},
+		dependencies = { "icons" },
 		event = "VeryLazy",
 		init = function()
 			vim.o.timeout = true
@@ -20,7 +18,7 @@ return {
 			notify = false,
 		},
 	},
-	{ "echasnovski/mini.icons", name = "icons", opts = {} },
+	{ "nvim-tree/nvim-web-devicons", name = "icons", opts = {} },
 	{ "numToStr/Comment.nvim", opts = {} },
 	{ "j-hui/fidget.nvim", opts = {} },
 }
