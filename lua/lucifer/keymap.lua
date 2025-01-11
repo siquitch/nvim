@@ -16,7 +16,7 @@ map.set("n", "<C-d>", "<C-d>zz")
 map.set("n", "n", "nzzzv")
 map.set("n", "N", "Nzzzv")
 
--- system clipboard
+-- System clipboard
 map.set("n", "<leader>y", '"+y')
 map.set("v", "<leader>y", '"+y')
 map.set("n", "<leader>Y", '"+Y')
@@ -42,7 +42,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 		map.set("n", "gr", vim.lsp.buf.references, opts)
 		map.set("n", "<leader>fm", function()
-			vim.lsp.buf.format({ async = true })
+			if vim.bo.filetype == "lua" then
+				require("stylua").format()
+			else
+				vim.lsp.buf.format({ async = true })
+			end
 		end, opts)
 	end,
 })

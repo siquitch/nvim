@@ -21,4 +21,5 @@ return {
 	{ "nvim-tree/nvim-web-devicons", name = "icons", opts = {} },
 	{ "numToStr/Comment.nvim", opts = {} },
 	{ "j-hui/fidget.nvim", opts = {} },
+	{ "wesleimp/stylua.nvim" },
 }
