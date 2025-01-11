@@ -30,3 +30,6 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
+
+-- For tiny-inline-diagnostic
+vim.diagnostic.config({ virtual_text = false })
