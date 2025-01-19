@@ -4,9 +4,12 @@ return {
 	version = "v0.10.0",
 	opts = {
 		keymap = {
+			preset = "none",
 			["<Down>"] = { "select_next", "fallback" },
 			["<Up>"] = { "select_prev", "fallback" },
-			["<C-k>"] = { "show", "show_documentation", "hide_documentation" },
+			["<C-k>"] = { "show_documentation", "hide_documentation" },
+			["<C-j>"] = { "show", "hide" },
+			["<C-y>"] = { "accept", "fallback" },
 		},
 		appearance = {
 			use_nvim_cmp_as_default = true,
