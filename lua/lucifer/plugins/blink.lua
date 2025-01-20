@@ -30,7 +30,7 @@ return {
 		signature = { enabled = true },
 		completion = {
 			trigger = { prefetch_on_insert = true },
-			list = { max_items = 75 },
+			list = { max_items = 20 },
 			menu = {
 				scrollbar = false,
 			},
