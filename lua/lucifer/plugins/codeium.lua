@@ -30,7 +30,7 @@ return {
 			enable_index_service = false,
 			virtual_text = {
 				enabled = true,
-				manual = true,
+				manual = false,
 				map_keys = true,
 				key_bindings = {
 					accept = "<C-y>",
