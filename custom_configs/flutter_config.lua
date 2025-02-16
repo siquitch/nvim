@@ -29,3 +29,11 @@ require("lualine").setup({
 		lualine_x = { get_version, "filetype" },
 	},
 })
+
+-- create autocommand to flutter pub get
+vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = "pubspec.yaml",
+    callback = function()
+        vim.cmd("FlutterPubGet")
+    end,
+})
