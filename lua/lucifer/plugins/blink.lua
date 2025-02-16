@@ -8,7 +8,7 @@ return {
 			["<Down>"] = { "select_next", "fallback" },
 			["<Up>"] = { "select_prev", "fallback" },
 			["<C-k>"] = { "show_documentation", "hide_documentation" },
-			["<C-space>"] = { "show", "hide" },
+			["<C-j>"] = { "show", "hide" },
 			["<C-y>"] = { "accept", "fallback" },
 		},
 		appearance = {
