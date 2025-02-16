@@ -24,6 +24,11 @@ return {
 				desc = "Find files",
 			},
 			{
+				"<leader>f;",
+				fzf.resume,
+				desc = "Find files",
+			},
+			{
 				"<leader>f.",
 				fzf.oldfiles,
 				desc = "Find files hidden included",
