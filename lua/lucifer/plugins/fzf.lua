@@ -28,6 +28,11 @@ return {
 				fzf.resume,
 				desc = "Find files",
 			},
+            {
+                "<leader>fa",
+                fzf.lsp_code_actions,
+                desc = "Find files",
+            },
 			{
 				"<leader>f.",
 				fzf.oldfiles,
