@@ -30,10 +30,14 @@ require("lualine").setup({
 	},
 })
 
+vim.api.nvim_create_user_command("FlutterPubGet", function()
+	vim.cmd("!flutter pub get")
+end, {})
+
 -- create autocommand to flutter pub get
 vim.api.nvim_create_autocmd("BufWritePost", {
-    pattern = "pubspec.yaml",
-    callback = function()
-        vim.cmd("FlutterPubGet")
-    end,
+	pattern = "pubspec.yaml",
+	callback = function()
+		vim.cmd("FlutterPubGet")
+	end,
 })
