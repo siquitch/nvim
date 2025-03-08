@@ -1,7 +1,7 @@
 return {
 	"saghen/blink.cmp",
 	dependencies = "rafamadriz/friendly-snippets",
-	version = "v0.12.3",
+	version = "v0.13.1",
 	opts = {
 		keymap = {
 			preset = "none",
@@ -34,6 +34,7 @@ return {
 				scrollbar = false,
 			},
 		},
+        fuzzy = {implementation = "prefer_rust"}
 	},
 	opts_extend = { "sources.default" },
 }
