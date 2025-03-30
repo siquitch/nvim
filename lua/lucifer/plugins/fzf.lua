@@ -2,17 +2,20 @@ return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "icons" },
 	opts = {
+		defaults = {
+			prompt = ">",
+			formatter = "path.filename_first",
+			cwd_prompt = false,
+			previewer = false,
+		},
 		keymap = {
 			builtin = {
 				["<c-d>"] = "preview-page-down",
 				["<c-u>"] = "preview-page-up",
 			},
 		},
-		files = {
-            prompt = "Files> ",
-			previewer = false,
-			formatter = "path.filename_first",
-            cwd_prompt = false,
+		grep = {
+			previewer = true,
 		},
 	},
 	keys = function()
@@ -28,11 +31,11 @@ return {
 				fzf.resume,
 				desc = "Find files",
 			},
-            {
-                "<leader>fa",
-                fzf.lsp_code_actions,
-                desc = "Find files",
-            },
+			{
+				"<leader>fa",
+				fzf.lsp_code_actions,
+				desc = "Find files",
+			},
 			{
 				"<leader>f.",
 				fzf.oldfiles,
@@ -67,26 +70,6 @@ return {
 				"<leader>fs",
 				fzf.lsp_document_symbols,
 				desc = "Document symbols",
-			},
-			{
-				"<leader>gf",
-				fzf.git_files,
-				desc = "Git files",
-			},
-			{
-				"<leader>gc",
-				fzf.git_commits,
-				desc = "Git commits",
-			},
-			{
-				"<leader>gg",
-				fzf.git_branches,
-				desc = "Git branches",
-			},
-			{
-				"<leader>gs",
-				fzf.git_status,
-				desc = "Git status",
 			},
 		}
 	end,

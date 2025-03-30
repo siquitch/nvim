@@ -1,7 +1,3 @@
--- Paste below line into .nvim.lua
--- dofile('C:\\Users\\Eli\\AppData\\Local\\nvim\\custom_configs\\flutter_config.lua')
--- For flutter status line
-
 local function get_pubspec_version(file_path)
 	local file = io.open(file_path, "r")
 	if not file then
