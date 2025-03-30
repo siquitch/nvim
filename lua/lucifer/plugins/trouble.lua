@@ -4,14 +4,9 @@ return {
 	name = "trouble",
 	keys = {
 		{
-			"<leader>tw",
+			"<C-t>",
 			"<cmd>Trouble diagnostics toggle<cr>",
 			desc = "Trouble toggle workspace",
-		},
-		{
-			"<leader>tr",
-			"<cmd>TroubleRefresh<cr>",
-			desc = "Trouble refresh",
 		},
 	},
 	opts = {
