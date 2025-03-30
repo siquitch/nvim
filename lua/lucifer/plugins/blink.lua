@@ -26,6 +26,13 @@ return {
 				},
 			},
 		},
+		cmdline = {
+			completion = {
+				menu = {
+					auto_show = true,
+				},
+			},
+		},
 		signature = { enabled = true },
 		completion = {
 			trigger = { prefetch_on_insert = true },

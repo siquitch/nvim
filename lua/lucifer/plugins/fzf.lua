@@ -3,7 +3,7 @@ return {
 	dependencies = { "icons" },
 	opts = {
 		defaults = {
-			prompt = ">",
+			prompt = "> ",
 			formatter = "path.filename_first",
 			cwd_prompt = false,
 			previewer = false,

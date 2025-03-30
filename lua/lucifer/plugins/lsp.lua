@@ -1,6 +1,28 @@
+local servers = { "lua_ls", "clangd", "marksman", "gopls", "arduino_language_server" }
+local map = vim.keymap
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+	callback = function(ev)
+		local opts = { buffer = ev.buf }
+		map.set("n", "gd", vim.lsp.buf.definition, opts)
+		map.set("n", "K", vim.lsp.buf.hover, opts)
+		map.set("n", "gh", vim.lsp.buf.signature_help, opts)
+		map.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
+		map.set("n", "<space>rn", vim.lsp.buf.rename, opts)
+		map.set("n", "gr", vim.lsp.buf.references, opts)
+		map.set("n", "<leader>fm", function()
+			if vim.bo.filetype == "lua" then
+				require("stylua").format()
+			else
+				vim.lsp.buf.format({ async = true })
+			end
+		end, opts)
+	end,
+})
+
 return {
 	"neovim/nvim-lspconfig",
-
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
@@ -20,11 +42,15 @@ return {
 		local lsp = require("lspconfig")
 		require("mason").setup()
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "clangd", "marksman", "gopls", "arduino_language_server" },
+			automatic_installation = true,
+			ensure_installed = servers,
 			handlers = {
 				["lua_ls"] = function()
 					lsp.lua_ls.setup({
 						settings = {
+							Lua = {
+								vim.api,
+							},
 							completion = {
 								callSnippet = "Replace",
 							},
@@ -77,8 +103,7 @@ return {
 
 		for server, config in pairs(opts.servers) do
 			local capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-			config.capabilities = capabilities
-			lsp[server].setup(config)
+			lsp[server].setup({ capabilities = capabilities })
 		end
 	end,
 }
