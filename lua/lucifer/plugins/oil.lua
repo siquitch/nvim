@@ -1,15 +1,22 @@
 return {
 	"stevearc/oil.nvim",
 	dependencies = { "icons" },
-    priority = 1000000,
-	config = function()
-		require("oil").setup({
-			prompt_save_on_select_new_entry = false,
-			keymaps = {
-				["<C-h"] = false,
-				["<C-s"] = false,
-			},
-		})
-		vim.keymap.set("n", "<leader>o", "<cmd>Oil<CR>", { desc = "Toggle oil" })
-	end,
+	-- priority = 1000000,
+	lazy = false,
+	opts = {
+		prompt_save_on_select_new_entry = false,
+		keymaps = {
+			["<C-h>"] = false,
+			["<C-s>"] = false,
+		},
+		watch_for_changes = true,
+	},
+	keys = {
+		{
+			"<leader>o",
+			function()
+				require("oil").open()
+			end,
+		},
+	},
 }
