@@ -18,8 +18,7 @@ return {
 		{
 			"<leader>lg",
 			function()
-				local s = require("snacks")
-				s.lazygit.open()
+				require("snacks").lazygit.open()
 			end,
 			desc = "Open LazyGit",
 		},
