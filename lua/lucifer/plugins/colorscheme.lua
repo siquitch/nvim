@@ -13,7 +13,13 @@ return {
 					blink_cmp = true,
 				},
 			})
-			vim.cmd([[colorscheme catppuccin]])
+			-- vim.cmd([[colorscheme catppuccin]])
+		end,
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		config = function()
+			vim.cmd([[colorscheme kanagawa-dragon]])
 		end,
 	},
 }
