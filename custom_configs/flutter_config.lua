@@ -26,12 +26,23 @@ require("lualine").setup({
 	},
 })
 
+local function use_fvm()
+  local f = io.open(".fvmrc", "r")
+  if f ~= nil then
+    io.close(f)
+    return true
+  end
+  return false
+end
+
 vim.api.nvim_create_user_command("FlutterPubGet", function()
-	vim.cmd("!flutter pub get")
+  local cmd = use_fvm() and "fvm flutter pub get" or "flutter pub get"
+  vim.cmd("!" .. cmd)
 end, {})
 
 vim.api.nvim_create_user_command("DartBuild", function()
-	vim.cmd("!dart run build_runner build -d")
+  local cmd = use_fvm() and "fvm dart run build_runner build -d" or "dart run build_runner build -d"
+  vim.cmd("!" .. cmd)
 end, {})
 
 -- create autocommand to flutter pub get

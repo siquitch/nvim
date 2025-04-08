@@ -69,7 +69,7 @@ return {
 			{
 				"<leader>f.",
 				function()
-					picker.buffers({layout = "plain"})
+					picker.buffers({ layout = "plain" })
 				end,
 				desc = "Buffers",
 			},

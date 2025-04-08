@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
 		map.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 		map.set("n", "gr", vim.lsp.buf.references, opts)
+		map.set("n", "fa", vim.lsp.buf.code_action, opts)
 		map.set("n", "<leader>fm", function()
 			if vim.bo.filetype == "lua" then
 				require("stylua").format()
