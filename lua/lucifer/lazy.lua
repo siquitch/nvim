@@ -13,5 +13,5 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = "lucifer.plugins",
-	dev = { path = "~/plugins/", patterns = { "jumpr.nvim" } },
+	-- dev = { path = "~/plugins/", patterns = { "jumpr.nvim" } },
 })
