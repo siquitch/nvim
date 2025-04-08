@@ -45,7 +45,6 @@ vim.api.nvim_create_user_command("DartBuild", function()
   vim.cmd("!" .. cmd)
 end, {})
 
--- create autocommand to flutter pub get
 vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = "pubspec.yaml",
 	callback = function()
