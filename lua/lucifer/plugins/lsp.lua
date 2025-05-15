@@ -72,8 +72,7 @@ return {
 			eslint = {},
 		},
 	},
-
-	config = function(_, opts)
+	config = function(_, _)
 		require("mason").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = servers,
