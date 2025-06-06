@@ -5,6 +5,7 @@ return {
 		current_line_blame_opts = {
 			delay = 0,
 		},
+        current_line_blame_formatter = "<author>, <author_time:%R> - <summary> <abbrev_sha>"
 	},
 	keys = function()
 		local signs = require("gitsigns")
