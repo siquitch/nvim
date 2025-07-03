@@ -14,6 +14,7 @@ local map = vim.keymap
 --
 
 vim.lsp.config("dartls", {
+	cmd = { "fvm", "dart", "language-server", "--protocol=lsp" },
 	init_options = {
 		onlyAnalyzeProjectsWithOpenFiles = true,
 		suggestFromUnimportedLibraries = true,
